@@ -1,4 +1,4 @@
-{% set version = "0.18" %}
+{% set version = "0.19" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pagedown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pagedown/pagedown_{{ version }}.tar.gz
-  sha256: 3fcfd6de2a4e35635dbada06813d94947066994d99631e9d442d31c61ac55ed3
+  sha256: 3d63e33cd0ba3a52d0100dc0c94242b537d802ef3cec018ba4363b5c91b246f4
 
 build:
   merge_build_host: true  # [win]

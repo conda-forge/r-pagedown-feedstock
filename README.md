@@ -1,11 +1,11 @@
-About r-pagedown
-================
+About r-pagedown-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pagedown-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/rstudio/pagedown
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-pagedown-feedstock/blob/main/LICENSE.txt)
 
 Summary: Use the paged media properties in CSS and the JavaScript library 'paged.js' to split the content of an HTML document into discrete pages. Each page can have its page size, page numbers, margin boxes, and running headers, etc. Applications of this package include books, letters, reports, papers, business cards, resumes, and posters.
 

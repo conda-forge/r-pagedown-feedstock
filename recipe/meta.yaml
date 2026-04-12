@@ -1,22 +1,26 @@
-{% set version = "0.23" %}
+{% set version = "0.24" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-pagedown
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/pagedown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pagedown/pagedown_{{ version }}.tar.gz
-  sha256: a58f43f2b7d30b8c01352c72b2f0dbb03077c788d9ba7c7721b110ed79360167
+  sha256: 41b213446da066d23ade030470ecabf6b962c3428bb0d6d8abcd4ad8ee4bb85b
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -30,8 +34,8 @@ requirements:
     - r-jsonlite
     - r-later >=1.0.0
     - r-processx
-    - r-rmarkdown >=2.8
-    - r-servr >=0.23
+    - r-rmarkdown >=2.13
+    - r-servr >=0.31
     - r-websocket
     - r-xfun
     - pandoc >=2.2.3
@@ -43,8 +47,8 @@ requirements:
     - r-jsonlite
     - r-later >=1.0.0
     - r-processx
-    - r-rmarkdown >=2.8
-    - r-servr >=0.23
+    - r-rmarkdown >=2.13
+    - r-servr >=0.31
     - r-websocket
     - r-xfun
     - pandoc >=2.2.3
@@ -57,8 +61,8 @@ test:
 about:
   home: https://github.com/rstudio/pagedown
   license: MIT
-  summary: Use the paged media properties in CSS and the JavaScript library 'paged.js' to split the content of an HTML document into discrete pages. Each page can have its page size, page numbers, margin boxes, and running headers, etc. Applications of this package include books, letters, reports, papers, business cards,
-    resumes, and posters.
+  summary: Use the paged media properties in CSS and the JavaScript library 'paged.js' to split the content of an HTML document into discrete pages. Each page can have its page size, page numbers, margin boxes, and running headers, etc. Applications of this package include books, letters, reports, papers, business 
+    cards, resumes, and posters.
   license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT

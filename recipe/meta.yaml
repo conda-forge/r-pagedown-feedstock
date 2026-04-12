@@ -3,7 +3,7 @@
 
 package:
   name: r-pagedown
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
@@ -17,6 +17,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -30,8 +34,8 @@ requirements:
     - r-jsonlite
     - r-later >=1.0.0
     - r-processx
-    - r-rmarkdown >=2.8
-    - r-servr >=0.23
+    - r-rmarkdown >=2.13
+    - r-servr >=0.31
     - r-websocket
     - r-xfun
     - pandoc >=2.2.3
@@ -43,8 +47,8 @@ requirements:
     - r-jsonlite
     - r-later >=1.0.0
     - r-processx
-    - r-rmarkdown >=2.8
-    - r-servr >=0.23
+    - r-rmarkdown >=2.13
+    - r-servr >=0.31
     - r-websocket
     - r-xfun
     - pandoc >=2.2.3

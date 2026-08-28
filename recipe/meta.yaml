@@ -1,15 +1,15 @@
-{% set version = "0.24" %}
+{% set version = "0.25" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-pagedown
-  version: "{{ version|replace("-", "_") }}"
+  version: {{ version|replace("-", "_") }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/pagedown_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pagedown/pagedown_{{ version }}.tar.gz
-  sha256: 41b213446da066d23ade030470ecabf6b962c3428bb0d6d8abcd4ad8ee4bb85b
+  sha256: 41181225964b73aa2752eb9d830dc847021f16c76b3dc858ffb76a7f969aadce
 
 build:
   number: 0
